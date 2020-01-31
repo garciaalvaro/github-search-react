@@ -15,11 +15,20 @@ import { Results } from "../Results/Results";
 export const App: FunctionComponent = () => (
 	<main id="content">
 		<Heading />
+
 		<Keywords />
-		<LastUpdate />
-		<MinStars />
-		<Languages />
+
+		<div
+			id="container-filters"
+			className="container container--content-fluid"
+		>
+			<LastUpdate />
+			<MinStars />
+			<Languages />
+		</div>
+
 		<Status />
+
 		<Results />
 	</main>
 );

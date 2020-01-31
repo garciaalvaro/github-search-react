@@ -1,3 +1,3 @@
 ![Banner Image](docs/banner.png)
 
-# GitHub Search React
+# GitHub Search (React)

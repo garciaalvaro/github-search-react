@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import "./Pagination.styl";
 import {
 	getPage,
 	getRepositoriesFound,
@@ -28,7 +29,7 @@ export const Pagination: FunctionComponent = () => {
 	}
 
 	return (
-		<nav>
+		<nav id="pagination">
 			<span>Page {page}</span>
 
 			<button
