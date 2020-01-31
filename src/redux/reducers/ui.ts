@@ -24,7 +24,12 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 		}
 
 		case "FETCH_REPOSITORIES_COMPLETED": {
-			return { ...state, status: null };
+			return {
+				...state,
+				status: null,
+				repositories_ids: action.payload.repositories_ids,
+				repositories_found: action.payload.repositories_found
+			};
 		}
 
 		case "FETCH_REPOSITORIES_FAILED": {
