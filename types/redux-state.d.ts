@@ -1,6 +1,7 @@
 type StateRepositories = Record<Repository["id"], Repository>;
 
 interface StateUi {
+	fetch_id: number;
 	repositories_found: number;
 	repositories_ids: Repository["id"][];
 	keywords: string;

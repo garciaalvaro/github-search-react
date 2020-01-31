@@ -1,4 +1,5 @@
 const initial_state: StateUi = {
+	fetch_id: 0,
 	repositories_found: 0,
 	repositories_ids: [],
 	keywords: "",
@@ -18,7 +19,8 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 					status: "waiting",
 					repositories_ids: [],
 					repositories_found:
-						state.page > 1 ? state.repositories_found : 0
+						state.page > 1 ? state.repositories_found : 0,
+					fetch_id: state.fetch_id + 1
 				};
 			}
 

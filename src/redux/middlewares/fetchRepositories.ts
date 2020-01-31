@@ -21,12 +21,20 @@ export const fetchRepositories: Middleware<{}, State> = ({
 
 	next(action);
 
-	const url = getUrl(getState().ui);
+	const { ui } = getState();
+	const { fetch_id } = ui;
+	const url = getUrl(ui);
 
 	// Fetch the data
 	const response = await fetch(url).catch(() => {
 		next(fetchRepositoriesFailed(false));
 	});
+
+	const { fetch_id: fetch_id_latest } = getState().ui;
+
+	// If the id is not the latest one, return. This could happen
+	// if a new timeout was triggered before this fetch resolved.
+	if (fetch_id_latest !== fetch_id) return;
 
 	if (!response || !response.ok) {
 		const too_many_requests = !!(response && response.status === 403);
