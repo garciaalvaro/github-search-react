@@ -7,6 +7,7 @@ import { Languages } from "../Languages/Languages";
 import { Status } from "../Status/Status";
 import { MinStars } from "../MinStars/MinStars";
 import { LastUpdate } from "../LastUpdate/LastUpdate";
+import { Results } from "../Results/Results";
 
 /**
  * Root component
@@ -19,5 +20,6 @@ export const App: FunctionComponent = () => (
 		<MinStars />
 		<Languages />
 		<Status />
+		<Results />
 	</main>
 );
