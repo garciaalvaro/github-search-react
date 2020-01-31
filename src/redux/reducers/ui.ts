@@ -13,7 +13,13 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 	switch (action.type) {
 		case "THROTTLE_STARTED": {
 			if (action.payload === "FETCH_REPOSITORIES") {
-				return { ...state, status: "waiting", repositories_ids: [] };
+				return {
+					...state,
+					status: "waiting",
+					repositories_ids: [],
+					repositories_found:
+						state.page > 1 ? state.repositories_found : 0
+				};
 			}
 
 			return state;
