@@ -29,7 +29,7 @@ export const Pagination: FunctionComponent = () => {
 	}
 
 	return (
-		<nav>
+		<nav id="pagination">
 			<span>Page {page}</span>
 
 			<button
