@@ -37,7 +37,12 @@ export const Keywords: FunctionComponent = () => {
 					placeholder="Search repositories..."
 				/>
 
-				<button className="search__button btn btn--icon">
+				<button
+					onClick={() =>
+						dispatch(fetchRepositories({ throttle_time: 1000 }))
+					}
+					className="search__button btn btn--icon"
+				>
 					<IconSearch />
 				</button>
 			</div>
