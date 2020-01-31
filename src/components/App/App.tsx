@@ -5,6 +5,7 @@ import { Heading } from "../Heading/Heading";
 import { Keywords } from "../Keywords/Keywords";
 import { Languages } from "../Languages/Languages";
 import { Status } from "../Status/Status";
+import { MinStars } from "../MinStars/MinStars";
 import { LastUpdate } from "../LastUpdate/LastUpdate";
 
 /**
@@ -14,8 +15,9 @@ export const App: FunctionComponent = () => (
 	<main id="content">
 		<Heading />
 		<Keywords />
+		<LastUpdate />
+		<MinStars />
 		<Languages />
 		<Status />
-		<LastUpdate />
 	</main>
 );
