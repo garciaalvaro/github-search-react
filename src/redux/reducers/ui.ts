@@ -37,7 +37,8 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 		case "UPDATE_LANGUAGE": {
 			return {
 				...state,
-				language: action.payload
+				language:
+					action.payload === state.language ? null : action.payload
 			};
 		}
 
