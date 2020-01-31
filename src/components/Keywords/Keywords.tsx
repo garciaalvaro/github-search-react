@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import "./Keywords.styl";
 import { IconSearch } from "../../utils";
 import { getKeywords, updateKeywords, fetchRepositories } from "../../redux";
 
