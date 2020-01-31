@@ -9,6 +9,9 @@ export const getLanguage: Selector<StateUi["language"]> = state =>
 export const getLastUpdate: Selector<StateUi["last_update"]> = state =>
 	state.ui.last_update;
 
+export const getMinStars: Selector<StateUi["min_stars"]> = state =>
+	state.ui.min_stars;
+
 export const isLanguageActive: Selector<boolean, StateUi["language"]> = (
 	state,
 	language

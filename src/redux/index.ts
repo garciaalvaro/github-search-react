@@ -5,6 +5,7 @@ export {
 	getStatus,
 	getLanguage,
 	getLastUpdate,
+	getMinStars,
 	isLanguageActive
 } from "./selectors";
 
