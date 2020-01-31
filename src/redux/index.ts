@@ -6,7 +6,8 @@ export {
 	getLanguage,
 	getLastUpdate,
 	getMinStars,
-	isLanguageActive
+	isLanguageActive,
+	getRepositoriesIds
 } from "./selectors";
 
 export {

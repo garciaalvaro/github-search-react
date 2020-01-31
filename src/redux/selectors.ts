@@ -16,3 +16,6 @@ export const isLanguageActive: Selector<boolean, StateUi["language"]> = (
 	state,
 	language
 ) => state.ui.language === language;
+
+export const getRepositoriesIds: Selector<StateUi["repositories_ids"]> = state =>
+	state.ui.repositories_ids;
