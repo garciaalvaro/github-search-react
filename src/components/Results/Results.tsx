@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { getRepositoriesIds, getRepositoriesFound } from "../../redux";
 import { Message } from "../Message/Message";
 import { Repository } from "../Repository/Repository";
+import { Pagination } from "../Pagination/Pagination";
 
 /**
  * Results component
@@ -18,27 +19,27 @@ export const Results: FunctionComponent = () => {
 		state => getRepositoriesIds(state)
 	);
 
-	if (!repositories_ids.length) {
-		return null;
-	}
-
 	return (
 		<div
 			id="container-results"
 			className="container container--content-column"
 		>
-			<Message
-				tag="H3"
-				text={`${repositories_found.toLocaleString()} repositor${
-					repositories_found > 1 ? "ies" : "y"
-				} found`}
-			/>
+			{!!repositories_ids.length && (
+				<Message
+					tag="H3"
+					text={`${repositories_found.toLocaleString()} repositor${
+						repositories_found > 1 ? "ies" : "y"
+					} found`}
+				/>
+			)}
 
 			<ul className="list">
 				{repositories_ids.map(id => (
 					<Repository key={id} id={id} />
 				))}
 			</ul>
+
+			<Pagination />
 		</div>
 	);
 };
