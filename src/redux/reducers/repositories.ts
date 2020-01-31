@@ -7,7 +7,7 @@ export const reducer = (
 	switch (action.type) {
 		// After repositories are fetched we add them to the store
 		case "FETCH_REPOSITORIES_COMPLETED": {
-			return { ...state, ...action.payload };
+			return action.payload.repositories;
 		}
 
 		default:
