@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import "./Pagination.styl";
 import {
 	getPage,
 	getRepositoriesFound,
