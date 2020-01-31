@@ -13,5 +13,6 @@ export {
 	fetchRepositoriesFailed,
 	updateKeywords,
 	updateLanguage,
-	updateLastUpdate
+	updateLastUpdate,
+	updateMinStars
 } from "./actions";

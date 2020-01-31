@@ -32,3 +32,8 @@ export const updateLastUpdate: ActionCreatorWithPayload<ActionUpdateLastUpdate> 
 	type: "UPDATE_LAST_UPDATE",
 	payload
 });
+
+export const updateMinStars: ActionCreatorWithPayload<ActionUpdateMinStars> = payload => ({
+	type: "UPDATE_MIN_STARS",
+	payload
+});
