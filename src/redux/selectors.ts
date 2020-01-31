@@ -22,3 +22,8 @@ export const getRepositoriesIds: Selector<StateUi["repositories_ids"]> = state =
 
 export const getRepositoriesFound: Selector<StateUi["repositories_found"]> = state =>
 	state.ui.repositories_found;
+
+export const getRepository: Selector<Repository, Repository["id"]> = (
+	state,
+	id
+) => state.repositories[id];

@@ -8,7 +8,8 @@ export {
 	getMinStars,
 	isLanguageActive,
 	getRepositoriesIds,
-	getRepositoriesFound
+	getRepositoriesFound,
+	getRepository
 } from "./selectors";
 
 export {
