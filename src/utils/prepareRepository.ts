@@ -3,7 +3,7 @@ import { getTimeSince } from "./getTimeSince";
 /**
  * Prepare repository returned from the GitHub API
  */
-export const prepareRepository = (repository: RepositoryRaw) => {
+export const prepareRepository = (repository: RepositoryRaw): Repository => {
 	const { owner, stargazers_count, updated_at, id } = repository;
 
 	const description = repository.description || "";
