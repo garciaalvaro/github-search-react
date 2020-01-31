@@ -55,5 +55,9 @@ export const Status: FunctionComponent = () => {
 		setText(getTextFromStatus(status));
 	}, [status]);
 
-	return <Message text={text} />;
+	return (
+		<div id="container-status" className="container">
+			<Message text={text} />
+		</div>
+	);
 };
