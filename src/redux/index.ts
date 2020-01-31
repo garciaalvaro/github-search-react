@@ -9,8 +9,9 @@ export {
 } from "./selectors";
 
 export {
-	updateKeywords,
 	fetchRepositories,
 	fetchRepositoriesFailed,
-	updateLanguage
+	updateKeywords,
+	updateLanguage,
+	updateLastUpdate
 } from "./actions";

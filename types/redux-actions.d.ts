@@ -56,6 +56,11 @@ type ActionUpdateLanguage = ActionWithPayload<
 	StateUi["language"]
 >;
 
+type ActionUpdateLastUpdate = ActionWithPayload<
+	"UPDATE_LAST_UPDATE",
+	StateUi["last_update"]
+>;
+
 // Defined actions
 type ActionsPlain = ActionFetchRepositories;
 
@@ -64,7 +69,8 @@ type ActionsWithPayload =
 	| ActionFetchRepositoriesCompleted
 	| ActionFetchRepositoriesFailed
 	| ActionUpdateKeywords
-	| ActionUpdateLanguage;
+	| ActionUpdateLanguage
+	| ActionUpdateLastUpdate;
 
 type ActionsWithMeta = ActionFetchRepositories;
 
