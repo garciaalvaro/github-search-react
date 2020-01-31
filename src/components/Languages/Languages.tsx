@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 
+import "./Languages.styl";
 import { Language } from "../Language/Language";
 
 const languages: Language[] = [
