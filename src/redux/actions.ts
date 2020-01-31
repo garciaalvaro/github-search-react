@@ -22,3 +22,8 @@ export const fetchRepositoriesFailed: ActionCreatorWithPayload<ActionFetchReposi
 	type: "FETCH_REPOSITORIES_FAILED",
 	payload
 });
+
+export const updateLanguage: ActionCreatorWithPayload<ActionUpdateLanguage> = payload => ({
+	type: "UPDATE_LANGUAGE",
+	payload
+});

@@ -51,6 +51,11 @@ type ActionUpdateKeywords = ActionWithPayload<
 
 type ActionThrottleStarted = ActionWithPayload<"THROTTLE_STARTED", string>;
 
+type ActionUpdateLanguage = ActionWithPayload<
+	"UPDATE_LANGUAGE",
+	StateUi["language"]
+>;
+
 // Defined actions
 type ActionsPlain = ActionFetchRepositories;
 
@@ -58,7 +63,8 @@ type ActionsWithPayload =
 	| ActionThrottleStarted
 	| ActionFetchRepositoriesCompleted
 	| ActionFetchRepositoriesFailed
-	| ActionUpdateKeywords;
+	| ActionUpdateKeywords
+	| ActionUpdateLanguage;
 
 type ActionsWithMeta = ActionFetchRepositories;
 
