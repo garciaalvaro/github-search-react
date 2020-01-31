@@ -61,6 +61,13 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 			};
 		}
 
+		case "UPDATE_PAGE": {
+			return {
+				...state,
+				page: action.payload
+			};
+		}
+
 		case "UPDATE_KEYWORDS": {
 			const { payload } = action;
 
