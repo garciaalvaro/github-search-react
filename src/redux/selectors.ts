@@ -27,3 +27,5 @@ export const getRepository: Selector<Repository, Repository["id"]> = (
 	state,
 	id
 ) => state.repositories[id];
+
+export const getPage: Selector<StateUi["page"]> = state => state.ui.page;

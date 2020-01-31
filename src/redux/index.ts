@@ -9,7 +9,8 @@ export {
 	isLanguageActive,
 	getRepositoriesIds,
 	getRepositoriesFound,
-	getRepository
+	getRepository,
+	getPage
 } from "./selectors";
 
 export {
