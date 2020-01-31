@@ -1,7 +1,13 @@
 export { store } from "./store";
-export { getKeywords, getStatus, getLanguage } from "./selectors";
+export {
+	getKeywords,
+	getStatus,
+	getLanguage,
+	isLanguageActive
+} from "./selectors";
 export {
 	updateKeywords,
 	fetchRepositories,
-	fetchRepositoriesFailed
+	fetchRepositoriesFailed,
+	updateLanguage
 } from "./actions";
