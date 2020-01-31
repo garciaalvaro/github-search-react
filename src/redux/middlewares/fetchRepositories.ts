@@ -8,7 +8,8 @@ import { prepareRepository, getUrl } from "../../utils";
 
 interface FetchedData {
 	items: RepositoryRaw[];
-	items_found: number;
+	total_count: number;
+	incomplete_results: boolean;
 }
 
 export const fetchRepositories: Middleware<{}, State> = ({
@@ -35,7 +36,7 @@ export const fetchRepositories: Middleware<{}, State> = ({
 
 	const {
 		items: repositories_raw,
-		items_found: repositories_found
+		total_count: repositories_found
 	}: FetchedData = await response.json();
 
 	const { obj, ids } = repositories_raw.reduce<{
