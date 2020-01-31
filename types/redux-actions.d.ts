@@ -66,6 +66,8 @@ type ActionUpdateMinStars = ActionWithPayload<
 	StateUi["min_stars"]
 >;
 
+type ActionUpdatePage = ActionWithPayload<"UPDATE_PAGE", StateUi["page"]>;
+
 // Defined actions
 type ActionsPlain = ActionFetchRepositories;
 
@@ -76,7 +78,8 @@ type ActionsWithPayload =
 	| ActionUpdateKeywords
 	| ActionUpdateLanguage
 	| ActionUpdateLastUpdate
-	| ActionUpdateMinStars;
+	| ActionUpdateMinStars
+	| ActionUpdatePage;
 
 type ActionsWithMeta = ActionFetchRepositories;
 

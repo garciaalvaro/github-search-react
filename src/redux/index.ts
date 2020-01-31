@@ -19,5 +19,6 @@ export {
 	updateKeywords,
 	updateLanguage,
 	updateLastUpdate,
-	updateMinStars
+	updateMinStars,
+	updatePage
 } from "./actions";

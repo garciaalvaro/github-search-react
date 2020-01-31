@@ -37,3 +37,8 @@ export const updateMinStars: ActionCreatorWithPayload<ActionUpdateMinStars> = pa
 	type: "UPDATE_MIN_STARS",
 	payload
 });
+
+export const updatePage: ActionCreatorWithPayload<ActionUpdatePage> = payload => ({
+	type: "UPDATE_PAGE",
+	payload
+});
