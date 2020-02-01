@@ -35,7 +35,7 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 
 			return {
 				...state,
-				status: null,
+				status: repositories_ids.length ? null : "no_results",
 				repositories_ids,
 				repositories_found
 			};
