@@ -4,14 +4,7 @@ import { Provider } from "react-redux";
 
 import { Keywords } from "./Keywords";
 import { store, updateKeywords } from "../../redux";
-
-const getFetchMock = (
-	data: null | FetchedData = {
-		items: [],
-		total_count: 0,
-		incomplete_results: false
-	}
-) => () => new Promise(() => setTimeout(() => data, 1000));
+import { getFetchMock } from "../../utils";
 
 describe("Keywords", () => {
 	const wrapper = mount(
