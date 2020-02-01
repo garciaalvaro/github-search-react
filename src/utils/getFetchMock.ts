@@ -9,5 +9,5 @@ const data_no_results = {
  */
 export const getFetchMock = (
 	data: FetchedData = data_no_results,
-	time = 1000
+	time = 0
 ) => () => new Promise(() => setTimeout(() => data, time));
