@@ -8,6 +8,6 @@ const data_no_results = {
  * This function mocks the fetch function. To be used in Jest.
  */
 export const getFetchMock = (
-	data: null | FetchedData = data_no_results,
+	data: FetchedData = data_no_results,
 	time = 1000
 ) => () => new Promise(() => setTimeout(() => data, time));
