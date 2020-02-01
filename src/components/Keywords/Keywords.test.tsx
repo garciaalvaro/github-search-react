@@ -5,12 +5,6 @@ import { Provider } from "react-redux";
 import { Keywords } from "./Keywords";
 import { store, updateKeywords } from "../../redux";
 
-interface FetchedData {
-	items: RepositoryRaw[];
-	total_count: number;
-	incomplete_results: boolean;
-}
-
 const getFetchMock = (
 	data: null | FetchedData = {
 		items: [],

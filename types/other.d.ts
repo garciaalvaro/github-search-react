@@ -48,3 +48,9 @@ type Language =
 	| "Python"
 	| "PHP"
 	| "C#";
+
+interface FetchedData {
+	items: RepositoryRaw[];
+	total_count: number;
+	incomplete_results: boolean;
+}
