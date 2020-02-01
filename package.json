@@ -12,7 +12,8 @@
 		"start": "npm run server:prod",
 		"stop": "npm run server-stop:prod",
 		"dev": "npm run webpack:dev & npm run server:dev",
-		"test": "jest"
+		"test": "jest",
+		"type-check": "tsc"
 	},
 	"dependencies": {
 		"express": "^4.17.1",
