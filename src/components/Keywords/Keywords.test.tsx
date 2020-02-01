@@ -28,7 +28,8 @@ describe("Keywords", () => {
 	it("should get the updated value after a updateKeywords dispatch", () => {
 		store.dispatch(updateKeywords("New Value"));
 
-		wrapper.update();
+		// Re-render the component
+		wrapper.setProps({});
 
 		expect(wrapper.find("input").props().value).toEqual("New Value");
 	});
@@ -38,7 +39,8 @@ describe("Keywords", () => {
 			.find("input")
 			.simulate("change", { target: { value: "New Value" } });
 
-		wrapper.update();
+		// Re-render the component
+		wrapper.setProps({});
 
 		expect(wrapper.find("input").props().value).toEqual("New Value");
 	});
