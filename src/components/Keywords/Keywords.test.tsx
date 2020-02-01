@@ -4,7 +4,9 @@ import { Provider } from "react-redux";
 
 import { Keywords } from "./Keywords";
 import { store, updateKeywords } from "../../redux";
-import { getFetchMock, getTimeoutPromise } from "../../utils";
+import { getFetchMock } from "../../utils";
+
+jest.useFakeTimers();
 
 describe("Keywords", () => {
 	const wrapper = mount(
@@ -28,6 +30,9 @@ describe("Keywords", () => {
 	it("should get the updated value after a updateKeywords dispatch", () => {
 		store.dispatch(updateKeywords("New Value"));
 
+		// End fetch throttle
+		jest.runAllTimers();
+
 		// Re-render the component
 		wrapper.setProps({});
 
@@ -39,6 +44,9 @@ describe("Keywords", () => {
 			.find("input")
 			.simulate("change", { target: { value: "New Value" } });
 
+		// End fetch throttle
+		jest.runAllTimers();
+
 		// Re-render the component
 		wrapper.setProps({});
 
@@ -48,17 +56,26 @@ describe("Keywords", () => {
 	it("should update the status to waiting on keywords change with 0 character", () => {
 		wrapper.find("input").simulate("change", { target: { value: "" } });
 
+		// End fetch throttle
+		jest.runAllTimers();
+
 		expect(store.getState().ui.status).toEqual("characters_0");
 	});
 
 	it("should update the status to waiting on keywords change with 1 character", () => {
 		wrapper.find("input").simulate("change", { target: { value: "a" } });
 
+		// End fetch throttle
+		jest.runAllTimers();
+
 		expect(store.getState().ui.status).toEqual("characters_1");
 	});
 
 	it("should update the status to waiting on keywords change with 2 character", () => {
 		wrapper.find("input").simulate("change", { target: { value: "ab" } });
+
+		// End fetch throttle
+		jest.runAllTimers();
 
 		expect(store.getState().ui.status).toEqual("characters_2");
 	});
@@ -71,7 +88,7 @@ describe("Keywords", () => {
 		expect(store.getState().ui.status).toEqual("waiting");
 	});
 
-	it("should update the status to loading on keywords change after 1 second", async () => {
+	it("should update the status to loading on keywords change", async () => {
 		// @ts-ignore TODO
 		global.fetch = jest.fn(getFetchMock());
 
@@ -79,13 +96,13 @@ describe("Keywords", () => {
 			.find("input")
 			.simulate("change", { target: { value: "New Value" } });
 
-		// Wait 1 second and then continue
-		await getTimeoutPromise(1000);
+		// End fetch throttle
+		jest.runAllTimers();
 
 		expect(store.getState().ui.status).toEqual("loading");
 	});
 
-	it("should update the status to error on keywords change after 2 seconds", async () => {
+	it("should update the status to error on keywords change", async () => {
 		// @ts-ignore TODO
 		global.fetch = jest.fn(getFetchMock(null));
 
@@ -93,8 +110,8 @@ describe("Keywords", () => {
 			.find("input")
 			.simulate("change", { target: { value: "New Value" } });
 
-		// Wait 1 second and then continue
-		await getTimeoutPromise(1000);
+		// End fetch throttle
+		jest.runAllTimers();
 
 		expect(store.getState().ui.status).toEqual("loading");
 	});
