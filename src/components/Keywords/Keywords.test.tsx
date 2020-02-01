@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 
 import { Keywords } from "./Keywords";
 import { store, updateKeywords } from "../../redux";
-import { getFetchMock } from "../../utils";
+import { getFetchMock, getTimeoutPromise } from "../../utils";
 
 describe("Keywords", () => {
 	const wrapper = mount(
@@ -78,7 +78,7 @@ describe("Keywords", () => {
 			.simulate("change", { target: { value: "New Value" } });
 
 		// Wait 1 second and then continue
-		await new Promise(response => setTimeout(response, 1000));
+		await getTimeoutPromise(1000);
 
 		expect(store.getState().ui.status).toEqual("loading");
 	});
@@ -92,7 +92,7 @@ describe("Keywords", () => {
 			.simulate("change", { target: { value: "New Value" } });
 
 		// Wait 1 second and then continue
-		await new Promise(response => setTimeout(response, 1000));
+		await getTimeoutPromise(1000);
 
 		expect(store.getState().ui.status).toEqual("loading");
 	});
