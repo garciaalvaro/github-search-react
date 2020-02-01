@@ -1,0 +1,38 @@
+/**
+ * Repository
+ */
+
+.item
+	padding 2em
+	margin 0 -2em
+	border-radius .15em
+	transition background-color .15s ease
+
+	&:hover
+		background-color var(--color_01)
+
+.item__body
+	margin .7em 0
+
+.item__stars
+	display flex
+	align-items center
+
+	svg
+		width 1em
+		margin-right .15em
+
+	~ span:before
+		content "|"
+		margin-right .7em
+		color var(--color_02)
+
+.item__license:empty
+.item__language:empty
+.item__updated:empty
+	display none
+
+.item__license
+.item__language
+.item__stars
+	margin-right .7em
