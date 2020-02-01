@@ -8,7 +8,7 @@ export const throttle: Middleware<{}, State> = () => next => (
 	action: Actions
 ) => {
 	// @ts-ignore TODO
-	if (!action.meta?.throttle_time) return next(action);
+	if (action.meta?.throttle_time === undefined) return next(action);
 
 	next(throttleStarted(action.type));
 
