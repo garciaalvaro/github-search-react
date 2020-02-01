@@ -3,6 +3,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import { reducers } from "./reducers";
 import {
+	updateResults,
 	throttle,
 	fetchRepositories,
 	logger,
@@ -14,6 +15,7 @@ export const store = createStore(
 
 	composeWithDevTools(
 		applyMiddleware(
+			updateResults,
 			minCharacters,
 			throttle,
 			fetchRepositories,

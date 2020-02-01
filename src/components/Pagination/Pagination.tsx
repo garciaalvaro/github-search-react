@@ -2,12 +2,7 @@ import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import "./Pagination.styl";
-import {
-	getPage,
-	getRepositoriesFound,
-	fetchRepositories,
-	updatePage
-} from "../../redux";
+import { getPage, getRepositoriesFound, updatePage } from "../../redux";
 
 const results_per_page = 30;
 
@@ -33,11 +28,7 @@ export const Pagination: FunctionComponent = () => {
 			<span>Page {page}</span>
 
 			<button
-				onClick={() => {
-					dispatch(updatePage(page - 1));
-
-					dispatch(fetchRepositories({ throttle_time: 1000 }));
-				}}
+				onClick={() => dispatch(updatePage(page - 1))}
 				id="prev"
 				className="btn btn--text btn--filled"
 				disabled={page === 1}
@@ -46,11 +37,7 @@ export const Pagination: FunctionComponent = () => {
 			</button>
 
 			<button
-				onClick={() => {
-					dispatch(updatePage(page + 1));
-
-					dispatch(fetchRepositories({ throttle_time: 1000 }));
-				}}
+				onClick={() => dispatch(updatePage(page + 1))}
 				id="next"
 				className="btn btn--text btn--filled"
 				disabled={repositories_found <= page * results_per_page}

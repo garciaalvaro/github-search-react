@@ -1,11 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import {
-	getLastUpdate,
-	updateLastUpdate,
-	fetchRepositories
-} from "../../redux";
+import { getLastUpdate, updateLastUpdate } from "../../redux";
 
 /**
  * LastUpdate component
@@ -23,11 +19,9 @@ export const LastUpdate: FunctionComponent = () => {
 
 			<select
 				value={last_update || ""}
-				onChange={e => {
-					dispatch(updateLastUpdate(e.target.value as LastUpdate));
-
-					dispatch(fetchRepositories({ throttle_time: 1000 }));
-				}}
+				onChange={e =>
+					dispatch(updateLastUpdate(e.target.value as LastUpdate))
+				}
 				id="last_update"
 				name="last_update"
 			>

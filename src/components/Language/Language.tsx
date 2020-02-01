@@ -2,11 +2,7 @@ import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { className } from "../../utils";
-import {
-	isLanguageActive,
-	updateLanguage,
-	fetchRepositories
-} from "../../redux";
+import { isLanguageActive, updateLanguage } from "../../redux";
 
 interface Props {
 	language: Language;
@@ -26,11 +22,7 @@ export const Language: FunctionComponent<Props> = props => {
 
 	return (
 		<button
-			onClick={() => {
-				dispatch(updateLanguage(language));
-
-				dispatch(fetchRepositories({ throttle_time: 1000 }));
-			}}
+			onClick={() => dispatch(updateLanguage(language))}
 			data-language={language}
 			className={className([
 				"btn",

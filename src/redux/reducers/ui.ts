@@ -18,8 +18,7 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 					...state,
 					status: "waiting",
 					repositories_ids: [],
-					repositories_found:
-						state.page > 1 ? state.repositories_found : 0,
+					repositories_found: 0,
 					fetch_id: state.fetch_id + 1
 				};
 			}
@@ -32,11 +31,13 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 		}
 
 		case "FETCH_REPOSITORIES_COMPLETED": {
+			const { repositories_ids, repositories_found } = action.payload;
+
 			return {
 				...state,
 				status: null,
-				repositories_ids: action.payload.repositories_ids,
-				repositories_found: action.payload.repositories_found
+				repositories_ids,
+				repositories_found
 			};
 		}
 

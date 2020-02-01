@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { getMinStars, updateMinStars, fetchRepositories } from "../../redux";
+import { getMinStars, updateMinStars } from "../../redux";
 
 /**
  * MinStars component
@@ -19,11 +19,9 @@ export const MinStars: FunctionComponent = () => {
 
 			<select
 				value={min_stars || ""}
-				onChange={e => {
-					dispatch(updateMinStars(e.target.value as MinStars));
-
-					dispatch(fetchRepositories({ throttle_time: 1000 }));
-				}}
+				onChange={e =>
+					dispatch(updateMinStars(e.target.value as MinStars))
+				}
 				id="stars"
 				name="stars"
 			>

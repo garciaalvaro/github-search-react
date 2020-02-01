@@ -27,11 +27,7 @@ export const Keywords: FunctionComponent = () => {
 
 				<input
 					value={keywords}
-					onChange={e => {
-						dispatch(updateKeywords(e.target.value));
-
-						dispatch(fetchRepositories({ throttle_time: 1000 }));
-					}}
+					onChange={e => dispatch(updateKeywords(e.target.value))}
 					id="search__input"
 					className="search__input"
 					type="text"
