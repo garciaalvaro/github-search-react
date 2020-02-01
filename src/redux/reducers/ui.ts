@@ -12,7 +12,9 @@ const initial_state: StateUi = {
 
 export const reducer = (state = initial_state, action: Actions): StateUi => {
 	switch (action.type) {
+		// A Throttle started
 		case "THROTTLE_STARTED": {
+			// Update the status to waiting
 			if (action.payload === "FETCH_REPOSITORIES") {
 				return {
 					...state,
@@ -54,6 +56,7 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 			return {
 				...state,
 				language:
+					// If the received language is the previous one, toggle it
 					action.payload === state.language ? null : action.payload
 			};
 		}
