@@ -15,7 +15,7 @@ export const prepareRepository = (repository: RepositoryRaw): Repository => {
 			: "";
 	const url = repository.html_url || "";
 	const user = owner && owner.login ? owner.login : "";
-	const stars = stargazers_count.toLocaleString() || 0;
+	const stars = stargazers_count.toLocaleString() || "0";
 	const updated = `${getTimeSince(new Date(updated_at))} ago` || "";
 
 	return {
