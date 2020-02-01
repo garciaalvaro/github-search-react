@@ -17,8 +17,7 @@ export const store = createStore(
 			updateResults,
 			minCharacters,
 			throttle,
-			fetchRepositories,
-			minCharacters
+			fetchRepositories
 		)
 	)
 );
