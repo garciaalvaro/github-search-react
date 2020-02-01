@@ -2,6 +2,13 @@ import { Middleware } from "redux";
 
 import { fetchRepositories, updatePage } from "../actions";
 
+/**
+ * This middleware will dispatch fetchRepositories.
+ * It is a convenient middleware that will call fetch and perform
+ * some side effect (like updating page number if necessary),
+ * in a single place to avoid repeating functionality in
+ * the components.
+ */
 export const updateResults: Middleware<{}, State> = () => next => (
 	action: Actions
 ) => {
@@ -21,6 +28,9 @@ export const updateResults: Middleware<{}, State> = () => next => (
 		next(fetchRepositories({ throttle_time: 0 }));
 	} else {
 		next(updatePage(1));
+
+		// TODO: improve the fetchRepositories type to
+		// conditionally receive the meta object.
 		next(fetchRepositories({ throttle_time: 1000 }));
 	}
 };

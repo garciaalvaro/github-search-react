@@ -1,4 +1,4 @@
-import { name, version } from "./package.json";
+import { name, version, license } from "./package.json";
 import { BannerPlugin } from "webpack";
 import TerserPlugin from "terser-webpack-plugin";
 import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
@@ -24,6 +24,7 @@ export default {
 					extensions: [".tsx", ".ts", ".js", ".jsx"]
 				}
 			},
+
 			// Stylus/CSS files
 			{
 				test: /\.(css|styl)$/,
@@ -46,11 +47,13 @@ export default {
 		new MiniCssExtractPlugin({
 			filename: "bundle.css"
 		}),
+
 		// Add a banner with the project name and version
 		new BannerPlugin({
-			banner: `${name} | ${version}`,
+			banner: `${name} | ${version} | ${license}`,
 			include: ["bundle.js", "bundle.css"]
 		}),
+
 		// This plugin will include the webpack produced script and style
 		// in the HTML file. It adds a hash to the url, which ensures the
 		// client downloads the latest version, in case there is a cached one.

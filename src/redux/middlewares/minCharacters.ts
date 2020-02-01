@@ -1,5 +1,9 @@
 import { Middleware } from "redux";
 
+/**
+ * This middleware will prevent fetching data if the
+ * number of keyword characters is lower than 3.
+ */
 export const minCharacters: Middleware<{}, State> = ({ getState }) => next => (
 	action: Actions
 ) => {

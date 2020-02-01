@@ -6,7 +6,6 @@ import {
 	updateResults,
 	throttle,
 	fetchRepositories,
-	logger,
 	minCharacters
 } from "./middlewares";
 
@@ -18,9 +17,7 @@ export const store = createStore(
 			updateResults,
 			minCharacters,
 			throttle,
-			fetchRepositories,
-			minCharacters,
-			logger
+			fetchRepositories
 		)
 	)
 );

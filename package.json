@@ -1,6 +1,6 @@
 {
 	"name": "github-search-react",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Small app to search GitHub repositories",
 	"scripts": {
 		"webpack:dev": "webpack --mode development --watch",
@@ -12,7 +12,8 @@
 		"start": "npm run server:prod",
 		"stop": "npm run server-stop:prod",
 		"dev": "npm run webpack:dev & npm run server:dev",
-		"test": "jest"
+		"test": "tsc",
+		"type-check": "tsc"
 	},
 	"dependencies": {
 		"express": "^4.17.1",

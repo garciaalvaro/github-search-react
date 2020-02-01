@@ -12,6 +12,9 @@ interface FetchedData {
 	incomplete_results: boolean;
 }
 
+/**
+ * This middleware will fetch the data from the GitHub API
+ */
 export const fetchRepositories: Middleware<{}, State> = ({
 	getState
 }) => next => async (action: Actions) => {

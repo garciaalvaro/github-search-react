@@ -4,6 +4,10 @@ import { throttleStarted } from "../actions";
 
 const throttled_actions: Record<string, number> = {};
 
+/**
+ * This middleware will throttle actions that have the
+ * meta.throttle_time property.
+ */
 export const throttle: Middleware<{}, State> = () => next => (
 	action: Actions
 ) => {

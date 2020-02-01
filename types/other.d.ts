@@ -21,7 +21,7 @@ interface Repository {
 	description: string;
 	name: string;
 	user: string;
-	stars: number;
+	stars: string;
 	language: string;
 	updated: string;
 	license: string;
