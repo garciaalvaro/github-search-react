@@ -20,19 +20,21 @@ export const Results: FunctionComponent = () => {
 		state => getRepositoriesIds(state)
 	);
 
+	if (!repositories_ids.length) {
+		return null;
+	}
+
 	return (
 		<div
 			id="container-results"
 			className="container container--content-column"
 		>
-			{!!repositories_ids.length && (
-				<Message
-					tag="H3"
-					text={`${repositories_found.toLocaleString()} repositor${
-						repositories_found > 1 ? "ies" : "y"
-					} found`}
-				/>
-			)}
+			<Message
+				tag="H3"
+				text={`${repositories_found.toLocaleString()} repositor${
+					repositories_found > 1 ? "ies" : "y"
+				} found`}
+			/>
 
 			<ul className="list">
 				{repositories_ids.map(id => (
