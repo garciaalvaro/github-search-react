@@ -1,19 +1,28 @@
 import React from "react";
-import { mount } from "enzyme";
+import { mount, ReactWrapper } from "enzyme";
 import { Provider } from "react-redux";
 
 import { Keywords } from "./Keywords";
-import { store, updateKeywords } from "../../redux";
+import { generateStore, updateKeywords } from "../../redux";
 import { getFetchMock, getTimeoutPromise, setFetchMock } from "../../utils";
 
 setFetchMock();
 
+const Dummy = () => null;
+let store = generateStore();
+
 describe("Keywords", () => {
-	const wrapper = mount(
-		<Provider store={store}>
-			<Keywords />
-		</Provider>
-	);
+	let wrapper: ReactWrapper = mount(<Dummy />);
+
+	beforeEach(() => {
+		store = generateStore();
+
+		wrapper = mount(
+			<Provider store={store}>
+				<Keywords />
+			</Provider>
+		);
+	});
 
 	it("should render without throwing an error", () => {
 		expect(wrapper.find("input#search__input").length).toBe(1);
@@ -57,7 +66,7 @@ describe("Keywords", () => {
 		wrapper.find("input").simulate("change", { target: { value: "" } });
 
 		// Wait for the fetch throttle
-		await getTimeoutPromise(1000);
+		await getTimeoutPromise();
 
 		expect(store.getState().ui.status).toEqual("characters_0");
 	});
@@ -100,16 +109,21 @@ describe("Keywords", () => {
 	});
 
 	it("should update the status to error on keywords change", async () => {
-		setFetchMock(() => getFetchMock({ json: () => null }));
+		setFetchMock(() =>
+			getFetchMock({
+				ok: false,
+				json: () => null
+			})
+		);
 
 		wrapper
 			.find("input")
 			.simulate("change", { target: { value: "New Value" } });
 
 		// Wait for the fetch throttle
-		await getTimeoutPromise();
+		await getTimeoutPromise(1100);
 
-		expect(store.getState().ui.status).toEqual("loading");
+		expect(store.getState().ui.status).toEqual("error");
 
 		// Reset the default mock. TODO: check better implementation
 		setFetchMock();
