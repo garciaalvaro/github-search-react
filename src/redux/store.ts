@@ -17,7 +17,10 @@ export const store = createStore(
 			updateResults,
 			minCharacters,
 			throttle,
-			fetchRepositories
+			fetchRepositories,
+			// We check the min characters, in case the keywords have
+			// changed after fetch was called but before it resolved
+			minCharacters
 		)
 	)
 );
