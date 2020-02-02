@@ -46,6 +46,12 @@ Install the project dependencies and start the server. From the root directory i
 
 ## Changelog
 
+#### 1.1.0
+
+- Added tests using Jest and Enzyme
+- Added util functions for unit testing
+- Minor bug fixes
+
 #### 1.0.0
 
 - Initial release of functioning app
