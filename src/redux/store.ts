@@ -9,18 +9,22 @@ import {
 	minCharacters
 } from "./middlewares";
 
-export const store = createStore(
-	combineReducers(reducers),
+export const generateStore = () =>
+	createStore(
+		combineReducers(reducers),
 
-	composeWithDevTools(
-		applyMiddleware(
-			updateResults,
-			minCharacters,
-			throttle,
-			fetchRepositories,
-			// We check the min characters, in case the keywords have
-			// changed after fetch was called but before it resolved
-			minCharacters
+		composeWithDevTools(
+			applyMiddleware(
+				updateResults,
+				minCharacters,
+				throttle,
+				fetchRepositories,
+
+				// We check the min characters, in case the keywords have
+				// changed after fetch was called but before it resolved
+				minCharacters
+			)
 		)
-	)
-);
+	);
+
+export const store = generateStore();
