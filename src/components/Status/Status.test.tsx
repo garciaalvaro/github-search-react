@@ -53,7 +53,6 @@ describe("Status", () => {
 
 	it("should render the updated store status: error", async () => {
 		// Make fetch throw an error
-		// @ts-ignore TODO
 		setFetchMock(() => new Promise((res, reject) => reject()));
 
 		store.dispatch(updateKeywords("New Value"));

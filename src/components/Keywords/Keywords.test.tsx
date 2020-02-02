@@ -100,7 +100,6 @@ describe("Keywords", () => {
 	});
 
 	it("should update the status to error on keywords change", async () => {
-		// @ts-ignore TODO
 		setFetchMock(() => getFetchMock({ json: () => null }));
 
 		wrapper
