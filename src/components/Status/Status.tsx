@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { getStatus } from "../../redux";
 import { Message } from "../Message/Message";
 
-const getTextFromStatus = (status: StateUi["status"]) => {
+export const getTextFromStatus = (status: StateUi["status"]) => {
 	switch (status) {
 		case "characters_0":
 			return "Enter some text in the search field above";

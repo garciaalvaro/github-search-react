@@ -1,4 +1,4 @@
-export { store } from "./store";
+export { store, generateStore } from "./store";
 
 export {
 	getKeywords,

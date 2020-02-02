@@ -2,7 +2,7 @@ import { Middleware } from "redux";
 
 import { throttleStarted } from "../actions";
 
-const throttled_actions: Record<string, number> = {};
+const throttled_actions: Record<string, NodeJS.Timeout> = {};
 
 /**
  * This middleware will throttle actions that have the

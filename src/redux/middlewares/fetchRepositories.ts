@@ -6,12 +6,6 @@ import {
 } from "../actions";
 import { prepareRepository, getUrl } from "../../utils";
 
-interface FetchedData {
-	items: RepositoryRaw[];
-	total_count: number;
-	incomplete_results: boolean;
-}
-
 /**
  * This middleware will fetch the data from the GitHub API
  */
