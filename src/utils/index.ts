@@ -7,3 +7,4 @@ export { getPrevDateFrom } from "./getPrevDateFrom";
 export { getUrl } from "./getUrl";
 export { getFetchMock } from "./getFetchMock";
 export { getTimeoutPromise } from "./getTimeoutPromise";
+export { setFetchMock } from "./setFetchMock";
