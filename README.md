@@ -11,6 +11,7 @@ It is a reimplementation of [GitHub Search](https://github.com/garciaalvaro/gith
 - The CSS is built using **Stylus**
 - The **Webpack** bundler transforms the files and transpiles them using Babel, and other loaders and plugins
 - It provides configuration files for **eslint** linter
+- Tests are included using **Jest** and **Enzyme**
 
 ---
 
@@ -32,6 +33,10 @@ Install the project dependencies and start the server. From the root directory i
 
 - To stop the server run: `$ npm stop`
 - You may also run the server and Webpack in development mode: `$ npm run dev`
+
+### Testing
+
+- To run the provided tests, simply run: `$ npm test`
 
 ## Screenshots
 
