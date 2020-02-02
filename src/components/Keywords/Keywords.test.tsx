@@ -4,9 +4,9 @@ import { Provider } from "react-redux";
 
 import { Keywords } from "./Keywords";
 import { store, updateKeywords } from "../../redux";
-import { getFetchMock } from "../../utils";
+import { getFetchMock, getTimeoutPromise, setFetchMock } from "../../utils";
 
-jest.useFakeTimers();
+setFetchMock();
 
 describe("Keywords", () => {
 	const wrapper = mount(
@@ -27,11 +27,11 @@ describe("Keywords", () => {
 		expect(wrapper.find("input").text()).toEqual("");
 	});
 
-	it("should get the updated value after a updateKeywords dispatch", () => {
+	it("should get the updated value after a updateKeywords dispatch", async () => {
 		store.dispatch(updateKeywords("New Value"));
 
-		// End fetch throttle
-		jest.runAllTimers();
+		// Wait for the fetch throttle
+		await getTimeoutPromise();
 
 		// Re-render the component
 		wrapper.setProps({});
@@ -39,13 +39,13 @@ describe("Keywords", () => {
 		expect(wrapper.find("input").props().value).toEqual("New Value");
 	});
 
-	it("should update the store and receive back the value", () => {
+	it("should update the store and receive back the value", async () => {
 		wrapper
 			.find("input")
 			.simulate("change", { target: { value: "New Value" } });
 
-		// End fetch throttle
-		jest.runAllTimers();
+		// Wait for the fetch throttle
+		await getTimeoutPromise();
 
 		// Re-render the component
 		wrapper.setProps({});
@@ -53,29 +53,29 @@ describe("Keywords", () => {
 		expect(wrapper.find("input").props().value).toEqual("New Value");
 	});
 
-	it("should update the status to waiting on keywords change with 0 character", () => {
+	it("should update the status to waiting on keywords change with 0 character", async () => {
 		wrapper.find("input").simulate("change", { target: { value: "" } });
 
-		// End fetch throttle
-		jest.runAllTimers();
+		// Wait for the fetch throttle
+		await getTimeoutPromise(1000);
 
 		expect(store.getState().ui.status).toEqual("characters_0");
 	});
 
-	it("should update the status to waiting on keywords change with 1 character", () => {
+	it("should update the status to waiting on keywords change with 1 character", async () => {
 		wrapper.find("input").simulate("change", { target: { value: "a" } });
 
-		// End fetch throttle
-		jest.runAllTimers();
+		// Wait for the fetch throttle
+		await getTimeoutPromise();
 
 		expect(store.getState().ui.status).toEqual("characters_1");
 	});
 
-	it("should update the status to waiting on keywords change with 2 character", () => {
+	it("should update the status to waiting on keywords change with 2 character", async () => {
 		wrapper.find("input").simulate("change", { target: { value: "ab" } });
 
-		// End fetch throttle
-		jest.runAllTimers();
+		// Wait for the fetch throttle
+		await getTimeoutPromise();
 
 		expect(store.getState().ui.status).toEqual("characters_2");
 	});
@@ -89,30 +89,41 @@ describe("Keywords", () => {
 	});
 
 	it("should update the status to loading on keywords change", async () => {
-		// @ts-ignore TODO
-		global.fetch = jest.fn(getFetchMock());
-
 		wrapper
 			.find("input")
 			.simulate("change", { target: { value: "New Value" } });
 
-		// End fetch throttle
-		jest.runAllTimers();
+		// Wait for the fetch throttle
+		await getTimeoutPromise();
 
 		expect(store.getState().ui.status).toEqual("loading");
 	});
 
 	it("should update the status to error on keywords change", async () => {
 		// @ts-ignore TODO
-		global.fetch = jest.fn(getFetchMock(null));
+		setFetchMock(() => getFetchMock({ json: () => null }));
 
 		wrapper
 			.find("input")
 			.simulate("change", { target: { value: "New Value" } });
 
-		// End fetch throttle
-		jest.runAllTimers();
+		// Wait for the fetch throttle
+		await getTimeoutPromise();
 
 		expect(store.getState().ui.status).toEqual("loading");
+
+		// Reset the default mock. TODO: check better implementation
+		setFetchMock();
+	});
+
+	it("should update the status to no_results on keywords change", async () => {
+		wrapper
+			.find("input")
+			.simulate("change", { target: { value: "New Value" } });
+
+		// Wait for the fetch throttle
+		await getTimeoutPromise(1100);
+
+		expect(store.getState().ui.status).toEqual("no_results");
 	});
 });
