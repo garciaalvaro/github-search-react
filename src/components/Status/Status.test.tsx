@@ -1,19 +1,28 @@
 import React from "react";
-import { mount } from "enzyme";
+import { mount, ReactWrapper } from "enzyme";
 import { Provider } from "react-redux";
 
 import { Status, getTextFromStatus } from "./Status";
-import { store, updateKeywords } from "../../redux";
+import { generateStore, updateKeywords } from "../../redux";
 import { getTimeoutPromise, setFetchMock } from "../../utils";
 
 setFetchMock();
 
+const Dummy = () => null;
+let store = generateStore();
+
 describe("Status", () => {
-	const wrapper = mount(
-		<Provider store={store}>
-			<Status />
-		</Provider>
-	);
+	let wrapper: ReactWrapper = mount(<Dummy />);
+
+	beforeEach(() => {
+		store = generateStore();
+
+		wrapper = mount(
+			<Provider store={store}>
+				<Status />
+			</Provider>
+		);
+	});
 
 	it("should render without throwing an error", () => {
 		expect(wrapper.find("#container-status").length).toBe(1);
