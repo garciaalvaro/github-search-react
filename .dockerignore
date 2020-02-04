@@ -1,0 +1,13 @@
+# Git related files and folders
+.git
+.gitignore
+
+# Documentation
+docs
+
+# build folder
+dist
+
+# npm related files and folders
+package-lock.json
+node_modules
