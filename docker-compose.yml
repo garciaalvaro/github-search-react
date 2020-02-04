@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  github-search-react:
+    build: .
+    image: nodejs:13-alpine
+    container_name: github-search-react
+    restart: unless-stopped
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/app
