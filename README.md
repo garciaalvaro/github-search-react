@@ -59,6 +59,10 @@ The project also comes with Docker configuration files, so it can be run using D
 
 ## Changelog
 
+#### 1.2.0
+
+- Added Docker configuration files. Now the project can be run using Docker.
+
 #### 1.1.0
 
 - Added tests using Jest and Enzyme
