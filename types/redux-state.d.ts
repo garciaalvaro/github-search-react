@@ -1,6 +1,6 @@
 type StateRepositories = Record<Repository["id"], Repository>;
 
-interface StateUi {
+type StateUi = {
 	fetch_id: number;
 	repositories_found: number;
 	repositories_ids: Repository["id"][];
@@ -19,10 +19,10 @@ interface StateUi {
 		| "no_results"
 		| "too_many_requests"
 		| "error";
-}
+};
 
 // Global State
-interface State {
+type State = {
 	repositories: StateRepositories;
 	ui: StateUi;
-}
+};
