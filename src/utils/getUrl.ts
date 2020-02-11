@@ -1,10 +1,13 @@
 import { encode } from "./encode";
 import { getPrevDateFrom } from "./getPrevDateFrom";
 
-type Props = Pick<
-	StateUi,
-	"keywords" | "language" | "last_update" | "min_stars" | "page"
->;
+interface Props {
+	keywords: StateUi["keywords"];
+	language: StateUi["language"];
+	last_update: StateUi["last_update"];
+	min_stars: StateUi["min_stars"];
+	page: StateUi["page"];
+}
 
 /**
  * Simple function to return the url and query to fetch from

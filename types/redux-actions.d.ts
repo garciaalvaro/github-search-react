@@ -1,28 +1,28 @@
 // Actions
-interface ActionPlain<T> {
+type ActionPlain<T> = {
 	type: T;
-}
+};
 
-interface ActionWithPayload<T, P> extends ActionPlain<T> {
+type ActionWithPayload<T, P> = ActionPlain<T> & {
 	payload: P;
-}
+};
 
-interface ActionWithMeta<T, M> extends ActionPlain<T> {
+type ActionWithMeta<T, M> = ActionPlain<T> & {
 	meta: M;
-}
+};
 
 // Action Creators
-interface ActionCreatorPlain<A extends Actions> {
+type ActionCreatorPlain<A extends Actions> = {
 	(): A;
-}
+};
 
-interface ActionCreatorWithPayload<A extends ActionsWithPayload> {
+type ActionCreatorWithPayload<A extends ActionsWithPayload> = {
 	(payload: A["payload"]): A;
-}
+};
 
-interface ActionCreatorWithMeta<A extends ActionsWithMeta> {
+type ActionCreatorWithMeta<A extends ActionsWithMeta> = {
 	(meta: A["meta"]): A;
-}
+};
 
 // Defined action creators
 type ActionFetchRepositories = ActionWithMeta<

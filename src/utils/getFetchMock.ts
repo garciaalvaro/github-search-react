@@ -8,11 +8,11 @@ const response_default = {
 	})
 };
 
-interface Response {
+type Response = {
 	ok: boolean;
 	status: number;
 	json: () => null | FetchedData;
-}
+};
 
 /**
  * This function mocks the fetch function. To be used in Jest.
