@@ -13,6 +13,7 @@
 		"start": "npm run server:prod",
 		"prestart:docker": "npm run webpack:prod",
 		"start:docker": "npm run server:docker",
+		"docker": "docker-compose up -d",
 		"stop": "npm run server-stop:prod",
 		"dev": "npm run webpack:dev & npm run server:dev",
 		"test": "tsc && jest",
