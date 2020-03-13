@@ -36,11 +36,13 @@ export const Results: FunctionComponent = () => {
 				} found`}
 			/>
 
-			<ul className="list">
+			<ol className="list">
 				{repositories_ids.map(id => (
-					<Repository key={id} id={id} />
+					<li key={id}>
+						<Repository id={id} />
+					</li>
 				))}
-			</ul>
+			</ol>
 
 			<Pagination />
 		</div>
