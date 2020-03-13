@@ -48,6 +48,7 @@ The project also comes with Docker configuration files, so it can be run using D
  - First make sure you have Docker installed
  - Run the command: `$ npm run docker` which will download and install the dependencies and set up the container
  - Once finished, it will be available in http://localhost:4000
+ - To stop the container run the command: `$ npm run docker-stop`
 
 ---
 
