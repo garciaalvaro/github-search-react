@@ -60,6 +60,11 @@ The project also comes with Docker configuration files, so it can be run using D
 
 ## Changelog
 
+#### 1.2.2
+
+- Added docker and docker-stop npm scripts
+- Updated results HTML to use ol and li
+
 #### 1.2.1
 
 - Removed unnecessary @babel/plugin-proposal-optional-chaining package
@@ -67,7 +72,7 @@ The project also comes with Docker configuration files, so it can be run using D
 
 #### 1.2.0
 
-- Added Docker configuration files. Now the project can be run using Docker.
+- Added Docker configuration files. Now the project can be run using Docker
 
 #### 1.1.0
 
