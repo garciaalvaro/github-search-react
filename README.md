@@ -26,13 +26,13 @@ To run this project make sure you have installed Node.js and npm in your machine
 Install the project dependencies and start the server. From the root directory inside your terminal follow this steps:
 
 - Install the dependencies: `$ npm install`
-- Once finished, bundle the files and start the server: `$ npm start`
+- Once finished, bundle the files and start the development server: `$ npm start`
 - Visit http://localhost:4000 in your browser
 
-### Notes
+### Production
 
-- To stop the server run: `$ npm stop`
-- You may also run the server and Webpack in development mode: `$ npm run dev`
+- To run the production script run: `$ npm run prod`
+- To stop the production server run: `$ npm run prod:stop`
 
 ---
 
@@ -48,7 +48,7 @@ The project also comes with Docker configuration files, so it can be run using D
  - First make sure you have Docker installed
  - Run the command: `$ npm run docker` which will download and install the dependencies and set up the container
  - Once finished, it will be available in http://localhost:4000
- - To stop the container run the command: `$ npm run docker-stop`
+ - To stop the container run the command: `$ npm run docker:stop`
 
 ---
 
