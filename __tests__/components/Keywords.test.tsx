@@ -2,9 +2,9 @@ import React from "react";
 import { mount, ReactWrapper } from "enzyme";
 import { Provider } from "react-redux";
 
-import { Keywords } from "./Keywords";
-import { generateStore, updateKeywords } from "../../redux";
-import { getFetchMock, getTimeoutPromise, setFetchMock } from "../../utils";
+import { Keywords } from "../../src/components/Keywords/Keywords";
+import { generateStore, updateKeywords } from "../../src/redux";
+import { getFetchMock, getTimeoutPromise, setFetchMock } from "../../src/utils";
 
 setFetchMock();
 
