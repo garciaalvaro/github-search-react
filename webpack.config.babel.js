@@ -4,7 +4,7 @@ import TerserPlugin from "terser-webpack-plugin";
 import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import nib from "nib";
+import postcssPresetEnv from "postcss-preset-env";
 import path from "path";
 
 export default {
@@ -30,14 +30,20 @@ export default {
 				test: /\.(css|styl)$/,
 				use: [
 					MiniCssExtractPlugin.loader,
+
 					"css-loader",
+
 					{
-						loader: "stylus-loader",
+						loader: 'postcss-loader',
 						options: {
-							use: nib(),
-							import: "~nib/index.styl"
+							ident: 'postcss',
+							plugins: () => [
+								postcssPresetEnv({ autoprefixer: { grid: true } }),
+							]
 						}
-					}
+					},
+
+					"stylus-loader",
 				]
 			}
 		]
