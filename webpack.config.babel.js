@@ -34,6 +34,13 @@ export default {
 					"css-loader",
 
 					{
+						loader: "clean-css-loader",
+						options: {
+							level: 2,
+						}
+					},
+
+					{
 						loader: 'postcss-loader',
 						options: {
 							ident: 'postcss',
