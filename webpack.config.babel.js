@@ -1,7 +1,5 @@
 import { name, version, license } from "./package.json";
 import { BannerPlugin } from "webpack";
-import TerserPlugin from "terser-webpack-plugin";
-import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import postcssPresetEnv from "postcss-preset-env";
@@ -9,10 +7,12 @@ import path from "path";
 
 export default {
 	entry: path.join(__dirname, "src/index.ts"),
+
 	output: {
 		path: path.join(__dirname, "dist"),
 		filename: "bundle.js"
 	},
+
 	module: {
 		rules: [
 			// TypeScript/JavaScript files
@@ -48,6 +48,7 @@ export default {
 			}
 		]
 	},
+
 	plugins: [
 		// Extract CSS into its own file
 		new MiniCssExtractPlugin({
@@ -68,7 +69,4 @@ export default {
 			hash: true
 		})
 	],
-	optimization: {
-		minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin()]
-	}
 };
