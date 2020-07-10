@@ -60,6 +60,12 @@ The project also comes with Docker configuration files, so it can be run using D
 
 ## Changelog
 
+#### 1.3.0
+
+- Added CSS Webpack loaders
+- Updated npm scripts
+- Updated dependencies
+
 #### 1.2.2
 
 - Added docker and docker-stop npm scripts
