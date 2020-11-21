@@ -15,7 +15,7 @@
 		"prestart:docker": "npm run webpack:prod",
 		"docker": "docker-compose up -d",
 		"docker:recreate": "docker-compose down && docker-compose build --no-cache && docker-compose up",
-		"docker:start": "npm run build & npm run serve:docker",
+		"docker:start": "npm run build && npm run serve:docker",
 		"docker:stop": "docker-compose down",
 		"test": "npm run test:types && npm run test:unit && npm run test:lint && npm run test:prettier",
 		"test:types": "tsc",
