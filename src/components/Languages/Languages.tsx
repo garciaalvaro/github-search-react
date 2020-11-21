@@ -13,7 +13,7 @@ const languages: Language[] = [
 	"Ruby",
 	"Python",
 	"PHP",
-	"C#"
+	"C#",
 ];
 
 /**

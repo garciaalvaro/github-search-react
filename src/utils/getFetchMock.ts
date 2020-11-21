@@ -4,8 +4,8 @@ const response_default = {
 	json: () => ({
 		items: [],
 		total_count: 0,
-		incomplete_results: false
-	})
+		incomplete_results: false,
+	}),
 };
 
 type Response = {

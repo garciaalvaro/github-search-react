@@ -112,7 +112,7 @@ describe("Keywords", () => {
 		setFetchMock(() =>
 			getFetchMock({
 				ok: false,
-				json: () => null
+				json: () => null,
 			})
 		);
 

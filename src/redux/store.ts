@@ -6,7 +6,7 @@ import {
 	updateResults,
 	throttle,
 	fetchRepositories,
-	minCharacters
+	minCharacters,
 } from "./middlewares";
 
 export const generateStore = () =>

@@ -27,7 +27,7 @@ export const Language: FunctionComponent<Props> = props => {
 			className={className([
 				"btn",
 				"btn--underlined",
-				is_active ? "btn--is-active" : null
+				is_active ? "btn--is-active" : null,
 			])}
 		>
 			{language}

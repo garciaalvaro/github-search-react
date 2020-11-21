@@ -2,7 +2,7 @@ import { Middleware } from "redux";
 
 import {
 	fetchRepositoriesCompleted,
-	fetchRepositoriesFailed
+	fetchRepositoriesFailed,
 } from "../actions";
 import { prepareRepository, getUrl } from "../../utils";
 
@@ -10,7 +10,7 @@ import { prepareRepository, getUrl } from "../../utils";
  * This middleware will fetch the data from the GitHub API
  */
 export const fetchRepositories: Middleware<{}, State> = ({
-	getState
+	getState,
 }) => next => async (action: Actions) => {
 	if (action.type !== "FETCH_REPOSITORIES") {
 		return next(action);
@@ -41,7 +41,7 @@ export const fetchRepositories: Middleware<{}, State> = ({
 
 	const {
 		items: repositories_raw,
-		total_count: repositories_found
+		total_count: repositories_found,
 	}: FetchedData = await response.json();
 
 	const { obj, ids } = repositories_raw.reduce<{
@@ -51,9 +51,9 @@ export const fetchRepositories: Middleware<{}, State> = ({
 		({ obj, ids }, repository) => ({
 			obj: {
 				...obj,
-				[repository.id]: prepareRepository(repository)
+				[repository.id]: prepareRepository(repository),
 			},
-			ids: [...ids, repository.id]
+			ids: [...ids, repository.id],
 		}),
 		{ obj: {}, ids: [] }
 	);
@@ -62,7 +62,7 @@ export const fetchRepositories: Middleware<{}, State> = ({
 		fetchRepositoriesCompleted({
 			repositories: obj,
 			repositories_ids: ids,
-			repositories_found
+			repositories_found,
 		})
 	);
 };

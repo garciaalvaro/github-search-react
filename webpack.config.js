@@ -12,7 +12,7 @@ module.exports = {
 
 	output: {
 		path: path.join(__dirname, "dist"),
-		filename: "bundle.js"
+		filename: "bundle.js",
 	},
 
 	module: {
@@ -23,8 +23,8 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: "babel-loader",
 				resolve: {
-					extensions: [".tsx", ".ts", ".js", ".jsx"]
-				}
+					extensions: [".tsx", ".ts", ".js", ".jsx"],
+				},
 			},
 
 			// Stylus/CSS files
@@ -36,32 +36,34 @@ module.exports = {
 					"css-loader",
 
 					{
-						loader: 'postcss-loader',
+						loader: "postcss-loader",
 						options: {
 							postcssOptions: {
 								plugins: () => [
-									postcssPresetEnv({ autoprefixer: { grid: true } }),
-								]
-							}
-						}
+									postcssPresetEnv({
+										autoprefixer: { grid: true },
+									}),
+								],
+							},
+						},
 					},
 
 					"stylus-loader",
-				]
-			}
-		]
+				],
+			},
+		],
 	},
 
 	plugins: [
 		// Extract CSS into its own file
 		new MiniCssExtractPlugin({
-			filename: "bundle.css"
+			filename: "bundle.css",
 		}),
 
 		// Add a banner with the project name and version
 		new BannerPlugin({
 			banner: `${name} | ${version} | ${license}`,
-			include: ["bundle.js", "bundle.css"]
+			include: ["bundle.js", "bundle.css"],
 		}),
 
 		// This plugin will include the webpack produced script and style
@@ -69,8 +71,8 @@ module.exports = {
 		// client downloads the latest version, in case there is a cached one.
 		new HtmlWebpackPlugin({
 			template: path.join(__dirname, "src/index.html"),
-			hash: true
-		})
+			hash: true,
+		}),
 	],
 
 	optimization: {
@@ -82,5 +84,5 @@ module.exports = {
 			// CssMinimizerPlugin, we also need to specify TerserPlugin
 			new TerserPlugin({ extractComments: false }),
 		],
-	}
+	},
 };

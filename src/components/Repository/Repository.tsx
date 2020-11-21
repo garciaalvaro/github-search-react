@@ -23,7 +23,7 @@ export const Repository: FunctionComponent<Props> = props => {
 		stars,
 		language,
 		updated,
-		license
+		license,
 	} = useSelector<State, Repository>(state => getRepository(state, id));
 
 	return (

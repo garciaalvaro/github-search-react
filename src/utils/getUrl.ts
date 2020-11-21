@@ -32,6 +32,6 @@ export const getUrl = (props: Props) => {
 		min_stars ? `+stars:>${encode(min_stars)}` : "",
 
 		// Page
-		page > 1 ? `&page=${encode(page.toString())}` : ""
+		page > 1 ? `&page=${encode(page.toString())}` : "",
 	].join("");
 };

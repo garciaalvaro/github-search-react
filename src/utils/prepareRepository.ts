@@ -27,6 +27,6 @@ export const prepareRepository = (repository: RepositoryRaw): Repository => {
 		stars,
 		language,
 		updated,
-		license
+		license,
 	};
 };
