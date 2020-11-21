@@ -2,7 +2,9 @@
 
 # GitHub Search (React)
 
-This project is a simple app that provides a UI to search GitHub repositories using the [GitHub Search API](https://developer.github.com/v3/search/).
+[Demo](https://garciaalvaro.github.io/github-search-react)
+
+This project is a simple app that provides a UI to search GitHub repositories using the [GitHub Search API](https://developer.github.com/v3/search).
 
 It is a reimplementation of [GitHub Search](https://github.com/garciaalvaro/github-search), built in TypeScript using React and Redux.
 

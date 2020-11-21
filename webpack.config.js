@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { name, version, license } = require("./package.json");
 const { BannerPlugin } = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -12,16 +13,16 @@ module.exports = (env, { mode }) => {
 	return {
 		watch: is_development,
 
-		entry: path.join(__dirname, "src/entry.ts"),
+		entry: path.resolve(__dirname, "src/entry.ts"),
 
 		output: {
-			path: path.join(__dirname, "dist"),
+			path: path.resolve(__dirname, "dist"),
 			filename: "bundle.js",
 		},
 
 		resolve: {
 			alias: {
-				"@": path.join(__dirname, "src"),
+				"@": path.resolve(__dirname, "src"),
 			},
 		},
 
@@ -83,8 +84,10 @@ module.exports = (env, { mode }) => {
 			// in the HTML file. It adds a hash to the url, which ensures the
 			// client downloads the latest version, in case there is a cached one.
 			new HtmlWebpackPlugin({
-				template: path.join(__dirname, "src/assets/index.html"),
+				template: path.resolve(__dirname, "src/assets/index.html"),
 				hash: true,
+				base: process.env.HTML_BASE || false,
+				favicon: path.resolve(__dirname, "src/assets/favicon.png"),
 			}),
 		],
 

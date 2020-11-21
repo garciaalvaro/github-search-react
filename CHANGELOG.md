@@ -1,3 +1,8 @@
+#### 2.1.0
+
+- Added gh-pages package
+- Minor fixes necessary for deployment
+
 #### 2.0.0
 
 - Refactored configurations and upgraded packages
