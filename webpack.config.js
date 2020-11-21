@@ -70,7 +70,7 @@ module.exports = {
 		// in the HTML file. It adds a hash to the url, which ensures the
 		// client downloads the latest version, in case there is a cached one.
 		new HtmlWebpackPlugin({
-			template: path.join(__dirname, "src/index.html"),
+			template: path.join(__dirname, "src/assets/index.html"),
 			hash: true,
 		}),
 	],
