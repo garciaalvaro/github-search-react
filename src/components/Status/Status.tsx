@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from "react";
+import React, { FunctionComponent, useState, useLayoutEffect } from "react";
 import { useSelector } from "react-redux";
 
 import { getStatus } from "@/redux";
@@ -15,7 +15,7 @@ export const Status: FunctionComponent = () => {
 
 	const [text, setText] = useState(getTextFromStatus(status));
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		setText(getTextFromStatus(status));
 	}, [status]);
 
