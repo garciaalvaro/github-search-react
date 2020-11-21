@@ -1,4 +1,6 @@
 module.exports = {
+	ignorePatterns: ["dist", "node_modules"],
+
 	parser: "@typescript-eslint/parser",
 
 	extends: [
@@ -23,12 +25,12 @@ module.exports = {
 		"@typescript-eslint/ban-ts-ignore": "off",
 		"react/react-in-jsx-scope": "off",
 		"react/prop-types": "off",
-		"react/display-name": "off"
+		"react/display-name": "off",
 	},
 
 	settings: {
 		react: {
-			version: "16.13.1",
+			version: "16.14.0",
 		},
 	},
 };
