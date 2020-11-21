@@ -3,7 +3,7 @@ version: "3.7"
 services:
   github-search-react:
     build: .
-    image: nodejs:13-alpine
+    image: nodejs:15
     container_name: github-search-react
     restart: unless-stopped
     ports:
