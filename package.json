@@ -5,7 +5,7 @@
 	"scripts": {
 		"start": "npm run dev",
 		"dev": "webpack --mode=development & npm run serve:dev",
-		"prebuild": "npm run clean:dist & npm run test",
+		"prebuild": "npm run clean:dist && npm run test:types && npm run test:unit",
 		"build": "webpack --mode=production",
 		"clean:dist": "rm -rf dist",
 		"serve": "pm2 start server.js --name github-search-react",
