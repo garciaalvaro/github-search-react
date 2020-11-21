@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { name, version, license } = require("./package.json");
 const { BannerPlugin } = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
