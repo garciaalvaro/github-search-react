@@ -24,17 +24,16 @@ export const Results: FunctionComponent = () => {
 		return null;
 	}
 
+	const text = `${repositories_found.toLocaleString()} repositor${
+		repositories_found > 1 ? "ies" : "y"
+	} found`;
+
 	return (
 		<div
 			id="container-results"
 			className="container container--content-column"
 		>
-			<Message
-				tag="H3"
-				text={`${repositories_found.toLocaleString()} repositor${
-					repositories_found > 1 ? "ies" : "y"
-				} found`}
-			/>
+			<Message tag="H3" text={text} />
 
 			<ol className="list">
 				{repositories_ids.map(id => (

@@ -9,7 +9,7 @@ import { prepareRepository, getUrl } from "@/utils";
 /**
  * This middleware will fetch the data from the GitHub API
  */
-export const fetchRepositories: Middleware<{}, State> = ({
+export const fetchRepositories: Middleware<unknown, State> = ({
 	getState,
 }) => next => async (action: Actions) => {
 	if (action.type !== "FETCH_REPOSITORIES") {

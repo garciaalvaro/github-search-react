@@ -26,12 +26,14 @@ export const Repository: FunctionComponent<Props> = props => {
 		license,
 	} = useSelector<State, Repository>(state => getRepository(state, id));
 
+	const title = `${user} / ${name}`;
+
 	return (
 		<article className="item">
 			<header>
 				<h4>
 					<a href={url} className="item__link">
-						{user} / {name}
+						{title}
 					</a>
 				</h4>
 			</header>

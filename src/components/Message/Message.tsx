@@ -9,8 +9,7 @@ interface Props {
  * Message component
  */
 export const Message: FunctionComponent<Props> = props => {
-	const { tag: tag_raw, text } = props;
-	const tag = tag_raw || "P";
+	const { tag, text } = props;
 
 	if (!text) return null;
 

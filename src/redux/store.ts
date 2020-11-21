@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { createStore, combineReducers, applyMiddleware, Store } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import { reducers } from "./reducers";
@@ -9,8 +9,8 @@ import {
 	minCharacters,
 } from "./middlewares";
 
-export const generateStore = () =>
-	createStore(
+export const generateStore = (): Store<State, Actions> =>
+	createStore<State, Actions, unknown, unknown>(
 		combineReducers(reducers),
 
 		composeWithDevTools(
@@ -20,8 +20,8 @@ export const generateStore = () =>
 				throttle,
 				fetchRepositories,
 
-				// We check the min characters, in case the keywords have
-				// changed after fetch was called but before it resolved
+				// Check the min characters, in case the keywords have
+				// changed after fetch was called but before it resolved.
 				minCharacters
 			)
 		)
