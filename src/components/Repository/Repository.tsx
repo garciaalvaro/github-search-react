@@ -2,8 +2,8 @@ import React, { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
 
 import "./Repository.styl";
-import { getRepository } from "../../redux";
-import { IconStar } from "../../utils";
+import { getRepository } from "@/redux";
+import { IconStar } from "@/utils";
 
 interface Props {
 	id: Repository["id"];

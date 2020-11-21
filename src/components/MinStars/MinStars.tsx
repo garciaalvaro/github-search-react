@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { getMinStars, updateMinStars } from "../../redux";
+import { getMinStars, updateMinStars } from "@/redux";
 
 /**
  * MinStars component

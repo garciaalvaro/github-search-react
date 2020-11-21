@@ -15,6 +15,12 @@ module.exports = {
 		filename: "bundle.js",
 	},
 
+	resolve: {
+		alias: {
+			"@": path.join(__dirname, "src"),
+		},
+	},
+
 	module: {
 		rules: [
 			// TypeScript/JavaScript files

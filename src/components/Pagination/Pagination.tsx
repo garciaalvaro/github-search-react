@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import "./Pagination.styl";
-import { getPage, getRepositoriesFound, updatePage } from "../../redux";
+import { getPage, getRepositoriesFound, updatePage } from "@/redux";
 
 const results_per_page = 30;
 

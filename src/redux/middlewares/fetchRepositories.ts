@@ -4,7 +4,7 @@ import {
 	fetchRepositoriesCompleted,
 	fetchRepositoriesFailed,
 } from "../actions";
-import { prepareRepository, getUrl } from "../../utils";
+import { prepareRepository, getUrl } from "@/utils";
 
 /**
  * This middleware will fetch the data from the GitHub API

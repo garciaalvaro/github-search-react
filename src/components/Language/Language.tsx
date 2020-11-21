@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { className } from "../../utils";
-import { isLanguageActive, updateLanguage } from "../../redux";
+import { className } from "@/utils";
+import { isLanguageActive, updateLanguage } from "@/redux";
 
 interface Props {
 	language: Language;

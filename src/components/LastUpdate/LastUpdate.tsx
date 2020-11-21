@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { getLastUpdate, updateLastUpdate } from "../../redux";
+import { getLastUpdate, updateLastUpdate } from "@/redux";
 
 /**
  * LastUpdate component

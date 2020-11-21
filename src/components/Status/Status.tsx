@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-import { getStatus } from "../../redux";
+import { getStatus } from "@/redux";
 import { Message } from "../Message";
 
 export const getTextFromStatus = (status: StateUi["status"]) => {

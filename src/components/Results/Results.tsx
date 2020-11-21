@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
 
 import "./Results.styl";
-import { getRepositoriesIds, getRepositoriesFound } from "../../redux";
+import { getRepositoriesIds, getRepositoriesFound } from "@/redux";
 import { Message } from "../Message/Message";
 import { Repository } from "../Repository";
 import { Pagination } from "../Pagination";
