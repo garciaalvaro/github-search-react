@@ -85,6 +85,7 @@ module.exports = (env, { mode }) => {
 			new HtmlWebpackPlugin({
 				template: path.join(__dirname, "src/assets/index.html"),
 				hash: true,
+				base: process.env.HTML_BASE || false,
 			}),
 		],
 
