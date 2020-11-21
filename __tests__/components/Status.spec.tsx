@@ -2,9 +2,9 @@ import React from "react";
 import { mount, ReactWrapper } from "enzyme";
 import { Provider } from "react-redux";
 
-import { Status, getTextFromStatus } from "@/components/Status";
+import { Status } from "@/components/Status";
 import { generateStore, updateKeywords } from "@/redux";
-import { getTimeoutPromise, setFetchMock } from "@/utils";
+import { getTextFromStatus, getTimeoutPromise, setFetchMock } from "@/utils";
 
 setFetchMock();
 

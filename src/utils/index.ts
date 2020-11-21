@@ -1,5 +1,6 @@
 export { className } from "./className";
 export { encode } from "./encode";
+export { getTextFromStatus } from "./getTextFromStatus";
 export { getTimeSince } from "./getTimeSince";
 export { IconSearch, IconStar } from "./icons";
 export { prepareRepository } from "./prepareRepository";

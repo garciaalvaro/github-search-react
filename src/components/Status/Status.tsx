@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useState, useLayoutEffect } from "react";
 import { useSelector } from "react-redux";
 
+import { getTextFromStatus } from "@/utils";
 import { getStatus } from "@/redux";
-import { getTextFromStatus } from "./getTextFromStatus";
 import { Message } from "../Message";
 
 /**

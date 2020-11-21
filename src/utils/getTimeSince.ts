@@ -2,7 +2,7 @@
  * Simple function to get the time since a given date
  * @see https://stackoverflow.com/a/3177838
  */
-export const getTimeSince = (date: Date) => {
+export const getTimeSince = (date: Date): string => {
 	const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
 
 	let interval = Math.floor(seconds / 31536000);

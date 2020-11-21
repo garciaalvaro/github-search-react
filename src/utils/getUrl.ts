@@ -12,7 +12,7 @@ interface Props {
 /**
  * Simple function to return the url and query to fetch from
  */
-export const getUrl = (props: Props) => {
+export const getUrl = (props: Props): string => {
 	const { keywords, language, last_update, min_stars, page } = props;
 
 	return [
