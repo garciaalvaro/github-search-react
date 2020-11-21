@@ -2,7 +2,7 @@ import React from "react";
 import { mount, ReactWrapper } from "enzyme";
 import { Provider } from "react-redux";
 
-import { Language } from "../../src/components/Language/Language";
+import { Language } from "../../src/components/Language";
 import { generateStore } from "../../src/redux";
 import { setFetchMock } from "../../src/utils";
 

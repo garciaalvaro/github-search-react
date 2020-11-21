@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from "react";
 
 import "./App.styl";
-import { Heading } from "../Heading/Heading";
-import { Keywords } from "../Keywords/Keywords";
-import { Languages } from "../Languages/Languages";
-import { Status } from "../Status/Status";
-import { MinStars } from "../MinStars/MinStars";
-import { LastUpdate } from "../LastUpdate/LastUpdate";
-import { Results } from "../Results/Results";
+import { Heading } from "../Heading";
+import { Keywords } from "../Keywords";
+import { Languages } from "../Languages";
+import { Status } from "../Status";
+import { MinStars } from "../MinStars";
+import { LastUpdate } from "../LastUpdate";
+import { Results } from "../Results";
 
 /**
  * Root component

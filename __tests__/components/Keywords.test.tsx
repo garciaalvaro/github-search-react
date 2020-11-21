@@ -2,7 +2,7 @@ import React from "react";
 import { mount, ReactWrapper } from "enzyme";
 import { Provider } from "react-redux";
 
-import { Keywords } from "../../src/components/Keywords/Keywords";
+import { Keywords } from "../../src/components/Keywords";
 import { generateStore, updateKeywords } from "../../src/redux";
 import { getFetchMock, getTimeoutPromise, setFetchMock } from "../../src/utils";
 
