@@ -7,7 +7,7 @@ const initial_state: StateUi = {
 	last_update: null,
 	min_stars: null,
 	page: 1,
-	status: "characters_0"
+	status: "characters_0",
 };
 
 export const reducer = (state = initial_state, action: Actions): StateUi => {
@@ -21,7 +21,7 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 					status: "waiting",
 					repositories_ids: [],
 					repositories_found: 0,
-					fetch_id: state.fetch_id + 1
+					fetch_id: state.fetch_id + 1,
 				};
 			}
 
@@ -39,7 +39,7 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 				...state,
 				status: repositories_ids.length ? null : "no_results",
 				repositories_ids,
-				repositories_found
+				repositories_found,
 			};
 		}
 
@@ -48,7 +48,7 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 				...state,
 				status: action.payload ? "too_many_requests" : "error",
 				repositories_ids: [],
-				repositories_found: 0
+				repositories_found: 0,
 			};
 		}
 
@@ -57,28 +57,28 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 				...state,
 				language:
 					// If the received language is the previous one, toggle it
-					action.payload === state.language ? null : action.payload
+					action.payload === state.language ? null : action.payload,
 			};
 		}
 
 		case "UPDATE_LAST_UPDATE": {
 			return {
 				...state,
-				last_update: action.payload
+				last_update: action.payload,
 			};
 		}
 
 		case "UPDATE_MIN_STARS": {
 			return {
 				...state,
-				min_stars: action.payload
+				min_stars: action.payload,
 			};
 		}
 
 		case "UPDATE_PAGE": {
 			return {
 				...state,
-				page: action.payload
+				page: action.payload,
 			};
 		}
 
@@ -95,7 +95,7 @@ export const reducer = (state = initial_state, action: Actions): StateUi => {
 						? "characters_1"
 						: payload.length === 2
 						? "characters_2"
-						: state.status
+						: state.status,
 			};
 		}
 

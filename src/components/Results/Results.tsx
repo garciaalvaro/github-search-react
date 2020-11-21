@@ -2,10 +2,10 @@ import React, { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
 
 import "./Results.styl";
-import { getRepositoriesIds, getRepositoriesFound } from "../../redux";
+import { getRepositoriesIds, getRepositoriesFound } from "@/redux";
 import { Message } from "../Message/Message";
-import { Repository } from "../Repository/Repository";
-import { Pagination } from "../Pagination/Pagination";
+import { Repository } from "../Repository";
+import { Pagination } from "../Pagination";
 
 /**
  * Results component
@@ -24,17 +24,16 @@ export const Results: FunctionComponent = () => {
 		return null;
 	}
 
+	const text = `${repositories_found.toLocaleString()} repositor${
+		repositories_found > 1 ? "ies" : "y"
+	} found`;
+
 	return (
 		<div
 			id="container-results"
 			className="container container--content-column"
 		>
-			<Message
-				tag="H3"
-				text={`${repositories_found.toLocaleString()} repositor${
-					repositories_found > 1 ? "ies" : "y"
-				} found`}
-			/>
+			<Message tag="H3" text={text} />
 
 			<ol className="list">
 				{repositories_ids.map(id => (

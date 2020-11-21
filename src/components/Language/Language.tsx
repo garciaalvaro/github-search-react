@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { className } from "../../utils";
-import { isLanguageActive, updateLanguage } from "../../redux";
+import { className } from "@/utils";
+import { isLanguageActive, updateLanguage } from "@/redux";
 
 interface Props {
 	language: Language;
@@ -27,7 +27,7 @@ export const Language: FunctionComponent<Props> = props => {
 			className={className([
 				"btn",
 				"btn--underlined",
-				is_active ? "btn--is-active" : null
+				is_active ? "btn--is-active" : null,
 			])}
 		>
 			{language}

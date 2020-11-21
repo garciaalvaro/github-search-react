@@ -1,44 +1,44 @@
 export const throttleStarted: ActionCreatorWithPayload<ActionThrottleStarted> = payload => ({
 	type: "THROTTLE_STARTED",
-	payload
+	payload,
 });
 
 export const fetchRepositories: ActionCreatorWithMeta<ActionFetchRepositories> = meta => ({
 	type: "FETCH_REPOSITORIES",
-	meta
+	meta,
 });
 
 export const fetchRepositoriesCompleted: ActionCreatorWithPayload<ActionFetchRepositoriesCompleted> = payload => ({
 	type: "FETCH_REPOSITORIES_COMPLETED",
-	payload
+	payload,
 });
 
 export const fetchRepositoriesFailed: ActionCreatorWithPayload<ActionFetchRepositoriesFailed> = payload => ({
 	type: "FETCH_REPOSITORIES_FAILED",
-	payload
+	payload,
 });
 
 export const updateKeywords: ActionCreatorWithPayload<ActionUpdateKeywords> = payload => ({
 	type: "UPDATE_KEYWORDS",
-	payload
+	payload,
 });
 
 export const updateLanguage: ActionCreatorWithPayload<ActionUpdateLanguage> = payload => ({
 	type: "UPDATE_LANGUAGE",
-	payload
+	payload,
 });
 
 export const updateLastUpdate: ActionCreatorWithPayload<ActionUpdateLastUpdate> = payload => ({
 	type: "UPDATE_LAST_UPDATE",
-	payload
+	payload,
 });
 
 export const updateMinStars: ActionCreatorWithPayload<ActionUpdateMinStars> = payload => ({
 	type: "UPDATE_MIN_STARS",
-	payload
+	payload,
 });
 
 export const updatePage: ActionCreatorWithPayload<ActionUpdatePage> = payload => ({
 	type: "UPDATE_PAGE",
-	payload
+	payload,
 });

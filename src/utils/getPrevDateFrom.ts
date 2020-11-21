@@ -2,7 +2,10 @@
  * Simple function to return a date in "YYYY-MM-DD" format,
  * from a given date back a certain amount time
  */
-export const getPrevDateFrom = (go_back = "last_week", from = new Date()) => {
+export const getPrevDateFrom = (
+	go_back = "last_week",
+	from = new Date()
+): string => {
 	const date = new Date(from);
 
 	switch (go_back) {

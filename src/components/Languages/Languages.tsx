@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 
 import "./Languages.styl";
-import { Language } from "../Language/Language";
+import { Language } from "../Language";
 
 const languages: Language[] = [
 	"JavaScript",
@@ -13,7 +13,7 @@ const languages: Language[] = [
 	"Ruby",
 	"Python",
 	"PHP",
-	"C#"
+	"C#",
 ];
 
 /**

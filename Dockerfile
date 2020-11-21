@@ -1,16 +1,14 @@
-FROM node:13-alpine
-
-# Create app directory that will be the root directory of our project
-RUN mkdir -p /app
+FROM node:15
+ENV NODE_ENV=production
 
 # Change working directory, any command from now will run in this directory
 WORKDIR /app
 
 # Copy package.json
-COPY ./package.json .
+COPY package*.json ./
 
 # Install packages
-RUN npm install
+RUN npm install --production
 
 # Copy the other files and folders
 COPY . .
@@ -22,4 +20,4 @@ EXPOSE 4000
 # - Build the production scripts with Webpack
 # - Start the pm2 server (Docker version)
 # @see https://pm2.keymetrics.io/docs/usage/docker-pm2-nodejs/
-CMD [ "npm", "run", "start:docker" ]
+CMD npm run docker:start

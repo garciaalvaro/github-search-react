@@ -9,7 +9,7 @@ import { fetchRepositories, updatePage } from "../actions";
  * in a single place to avoid repeating functionality in
  * the components.
  */
-export const updateResults: Middleware<{}, State> = () => next => (
+export const updateResults: Middleware<unknown, State> = () => next => (
 	action: Actions
 ) => {
 	if (

@@ -18,6 +18,10 @@
 		color inherit
 		letter-spacing inherit
 
+	&.btn--icon
+		align-items center
+		display flex
+
 	&.btn--underlined
 
 		&:before
@@ -30,7 +34,7 @@
 			background-color var(--color_07)
 			transform scaleY(0)
 			transform-origin bottom
-			transition transform .15s ease, opacity .15s ease
+			transition transform .15s var(--ease), opacity .15s var(--ease)
 			opacity 0
 
 		&:hover:before
@@ -52,7 +56,7 @@
 	&.btn--filled
 		border-radius .1em
 		background-color var(--color_01)
-		transition background-color .15s ease
+		transition background-color .15s var(--ease)
 
 		&:hover
 			background-color var(--color_02)

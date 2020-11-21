@@ -4,8 +4,8 @@ const response_default = {
 	json: () => ({
 		items: [],
 		total_count: 0,
-		incomplete_results: false
-	})
+		incomplete_results: false,
+	}),
 };
 
 type Response = {
@@ -20,7 +20,7 @@ type Response = {
 export const getFetchMock = (
 	response: Partial<Response> = response_default,
 	time = 0
-) =>
+): Promise<Response> =>
 	new Promise(resolve =>
 		setTimeout(() => resolve({ ...response_default, ...response }), time)
 	);

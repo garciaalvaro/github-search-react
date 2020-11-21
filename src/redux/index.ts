@@ -10,7 +10,7 @@ export {
 	getRepositoriesIds,
 	getRepositoriesFound,
 	getRepository,
-	getPage
+	getPage,
 } from "./selectors";
 
 export {
@@ -20,5 +20,5 @@ export {
 	updateLanguage,
 	updateLastUpdate,
 	updateMinStars,
-	updatePage
+	updatePage,
 } from "./actions";

@@ -8,10 +8,10 @@ const throttled_actions: Record<string, NodeJS.Timeout> = {};
  * This middleware will throttle actions that have the
  * meta.throttle_time property.
  */
-export const throttle: Middleware<{}, State> = () => next => (
+export const throttle: Middleware<unknown, State> = () => next => (
 	action: Actions
 ) => {
-	// @ts-ignore TODO
+	// @ts-expect-error TODO
 	if (action.meta?.throttle_time === undefined) return next(action);
 
 	next(throttleStarted(action.type));
@@ -27,6 +27,6 @@ export const throttle: Middleware<{}, State> = () => next => (
 
 		next(action);
 
-		// @ts-ignore TODO
+		// @ts-expect-error TODO
 	}, action.meta.throttle_time);
 };

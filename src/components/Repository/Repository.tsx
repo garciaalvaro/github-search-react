@@ -2,8 +2,8 @@ import React, { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
 
 import "./Repository.styl";
-import { getRepository } from "../../redux";
-import { IconStar } from "../../utils";
+import { getRepository } from "@/redux";
+import { IconStar } from "@/utils";
 
 interface Props {
 	id: Repository["id"];
@@ -23,15 +23,17 @@ export const Repository: FunctionComponent<Props> = props => {
 		stars,
 		language,
 		updated,
-		license
+		license,
 	} = useSelector<State, Repository>(state => getRepository(state, id));
+
+	const title = `${user} / ${name}`;
 
 	return (
 		<article className="item">
 			<header>
 				<h4>
 					<a href={url} className="item__link">
-						{user} / {name}
+						{title}
 					</a>
 				</h4>
 			</header>
