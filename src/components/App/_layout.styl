@@ -12,6 +12,9 @@ body
 	line-height 1.5
 	width 100vw
 
+#root
+	overflow-x hidden
+
 #title
 	color var(--color_07)
 	font-weight normal
@@ -21,7 +24,7 @@ body
 	top 0
 	left 0
 	z-index 1
-	transition color .15s ease
+	transition color .15s var(--ease)
 
 	&:hover
 		color var(--color)
