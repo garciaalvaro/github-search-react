@@ -59,6 +59,11 @@ The project also comes with Docker configuration files, so it can be run using D
 
 ## Changelog
 
+#### 2.0.0
+
+- Refactored configurations and upgraded packages
+- Minor style and code fixes
+
 #### 1.3.0
 
 - Added CSS Webpack loaders
