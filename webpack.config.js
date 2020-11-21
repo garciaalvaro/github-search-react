@@ -1,12 +1,14 @@
-import { name, version, license } from "./package.json";
-import { BannerPlugin } from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import postcssPresetEnv from "postcss-preset-env";
-import path from "path";
+const { name, version, license } = require("./package.json");
+const { BannerPlugin } = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const postcssPresetEnv = require("postcss-preset-env");
+const path = require("path");
 
-export default {
-	entry: path.join(__dirname, "src/index.ts"),
+module.exports = {
+	entry: path.join(__dirname, "src/entry.ts"),
 
 	output: {
 		path: path.join(__dirname, "dist"),
@@ -34,19 +36,13 @@ export default {
 					"css-loader",
 
 					{
-						loader: "clean-css-loader",
-						options: {
-							level: 2,
-						}
-					},
-
-					{
 						loader: 'postcss-loader',
 						options: {
-							ident: 'postcss',
-							plugins: () => [
-								postcssPresetEnv({ autoprefixer: { grid: true } }),
-							]
+							postcssOptions: {
+								plugins: () => [
+									postcssPresetEnv({ autoprefixer: { grid: true } }),
+								]
+							}
 						}
 					},
 
@@ -76,4 +72,15 @@ export default {
 			hash: true
 		})
 	],
+
+	optimization: {
+		minimize: true,
+		minimizer: [
+			new CssMinimizerPlugin(),
+
+			// As we are using a custom optimization, making use of
+			// CssMinimizerPlugin, we also need to specify TerserPlugin
+			new TerserPlugin({ extractComments: false }),
+		],
+	}
 };
