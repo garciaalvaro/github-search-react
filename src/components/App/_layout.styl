@@ -58,6 +58,12 @@ body
 	border-bottom 1px solid var(--color_01)
 	margin-bottom 2em
 
+	> .container
+		min-width 0
+
+	@media screen and (max-width: 600px)
+		grid-template-columns 1fr 1fr
+
 @media screen and (max-width: 600px)
 
 	#content

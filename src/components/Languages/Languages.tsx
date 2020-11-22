@@ -20,7 +20,7 @@ const languages: Language[] = [
  * Languages component
  */
 export const Languages: FunctionComponent = () => (
-	<div className="container container--content-fluid">
+	<div id="languages" className="container container--content-fluid">
 		{languages.map(language => (
 			<Language key={language} language={language} />
 		))}
