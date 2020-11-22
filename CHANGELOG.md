@@ -1,3 +1,8 @@
+#### 2.1.1
+
+- Fixed bug in responsive styles
+- Fixed bug with html_base being assigned in development
+
 #### 2.1.0
 
 - Added gh-pages package
