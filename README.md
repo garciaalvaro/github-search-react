@@ -6,7 +6,7 @@
 
 This project is a simple app that provides a UI to search GitHub repositories using the [GitHub Search API](https://developer.github.com/v3/search).
 
-There is also an implementation using [Vue.js](https://github.com/garciaalvaro/github-vue-v2), and another one using [Web Components](https://github.com/garciaalvaro/github-search).
+There is also an implementation using [Vue.js](https://github.com/garciaalvaro/github-search-vue-v2), and another one using [Web Components](https://github.com/garciaalvaro/github-search).
 
 - Built in **TypeScript** using **React** and **Redux**
 - Provides a server using **Express**
