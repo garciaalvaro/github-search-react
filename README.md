@@ -12,7 +12,7 @@ There is also an implementation using [Vue.js](https://github.com/garciaalvaro/g
 - Provides a server using **Express**
 - CSS pre-processed with **Stylus**
 - Bundled using **Webpack**
-- Code is linted using **eslint** and formatted using **prettier**
+- Code is linted using **eslint** and formatted using **Prettier**
 - Tests are included using **Jest** and **Enzyme**
 
 ---
