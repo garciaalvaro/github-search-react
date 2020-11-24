@@ -5,7 +5,7 @@ module.exports = {
 		[
 			"@babel/preset-env",
 			// Uses .browserslistrc data
-			{ corejs: 3 },
+			{ corejs: 3, useBuiltIns: "usage" },
 		],
 
 		"@babel/preset-react",
