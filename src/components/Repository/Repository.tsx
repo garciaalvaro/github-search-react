@@ -42,7 +42,7 @@ export const Repository: FunctionComponent<Props> = props => {
 				<p>{description}</p>
 			</section>
 
-			<footer className="container container--content-fluid">
+			<footer className="item__footer container container--content-fluid">
 				<div className="item__stars">
 					<IconStar />
 
