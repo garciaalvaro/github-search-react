@@ -30,7 +30,6 @@ export const MinStars: FunctionComponent = () => {
 					dispatch(updateMinStars(e.target.value as MinStars))
 				}
 				id="stars"
-				name="stars"
 			>
 				<option value="">Any amount</option>
 

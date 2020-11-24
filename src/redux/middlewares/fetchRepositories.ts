@@ -22,7 +22,7 @@ export const fetchRepositories: Middleware<unknown, State> = ({
 	const { fetch_id } = ui;
 	const url = getUrl(ui);
 
-	// Fetch the data
+	// Fetch the data.
 	const response = await fetch(url).catch(() => {
 		next(fetchRepositoriesFailed(false));
 	});

@@ -1,6 +1,6 @@
 // Repository received from the API
 type RepositoryRaw = {
-	id: string;
+	id: number;
 	html_url: string;
 	description: string;
 	name: string;
@@ -16,7 +16,7 @@ type RepositoryRaw = {
 };
 
 type Repository = {
-	id: string;
+	id: number;
 	url: string;
 	description: string;
 	name: string;

@@ -1,3 +1,8 @@
+#### 2.1.2
+
+- Improved Babel config polyfills
+- Fixed minor types and styles bugs
+
 #### 2.1.1
 
 - Fixed bug in responsive styles
