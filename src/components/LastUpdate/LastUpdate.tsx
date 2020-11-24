@@ -23,7 +23,6 @@ export const LastUpdate: FunctionComponent = () => {
 					dispatch(updateLastUpdate(e.target.value as LastUpdate))
 				}
 				id="last_update"
-				name="last_update"
 			>
 				<option value="">Any time</option>
 				<option value="last_week">Last week</option>
