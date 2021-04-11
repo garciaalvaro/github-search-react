@@ -3,7 +3,7 @@ import React, { FunctionComponent } from "react";
 import "./Languages.styl";
 import { Language } from "../Language";
 
-const languages: Language[] = [
+export const languages: Language[] = [
 	"JavaScript",
 	"TypeScript",
 	"HTML",
