@@ -29,6 +29,7 @@ export const Language: FunctionComponent<Props> = props => {
 				"btn--underlined",
 				is_active ? "btn--is-active" : null,
 			])}
+			aria-pressed={is_active}
 		>
 			{language}
 		</button>

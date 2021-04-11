@@ -20,7 +20,7 @@ export const Status: FunctionComponent = () => {
 	}, [status]);
 
 	return (
-		<div id="container-status" className="container">
+		<div id="container-status" className="container" data-testid="status">
 			<Message text={text} />
 		</div>
 	);
